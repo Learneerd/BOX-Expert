@@ -1,11 +1,12 @@
 import streamlit as st
 from openai import OpenAI, OpenAIError, RateLimitError
 from datetime import datetime
+import os
 
 # ==============================
 # 🔑 Inicializar cliente OpenAI
 # ==============================
-import os
+
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # ==============================
@@ -218,4 +219,3 @@ if submit_button and user_input.strip():
 if st.button("🧹 Limpiar chat"):
     st.session_state.messages = []
     st.rerun()
-
